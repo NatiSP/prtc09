@@ -1,5 +1,4 @@
   class Matrix
-    
     include Enumerable
 	attr_reader :filas, :columnas
 	
@@ -84,11 +83,7 @@
 	    return @filas
 	  end
   
-	  def columnas	    
+	  def columnas
 	    return @columnas
 	  end
-
-	  def coerce(other)
-	    [self,other]
-	  end
-  end
+  
