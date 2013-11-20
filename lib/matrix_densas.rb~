@@ -1,0 +1,47 @@
+require 'matrix.rb'
+
+class Matrix_Densa < Matrix
+
+    def initialize(filas_d, columnas_d)
+      super
+	@matrix_d = Array.new(filas_d){Array.new(columnas_d, zero)}
+    end
+  
+    def [](filas_d, columnas_d)
+	@matrix_d[filas_d][columnas_d]
+    end
+
+    def []=(filas_d, columnas_d, elemento)
+	@matrix_d[filas_d][columnas_d] = elemento
+    end
+    
+end
+    
+  
+  md1 = Matrix_Densa.new(3,3)
+  md1[0,0] = 1
+  md1[0,1] = 1
+  md1[0,2] = 1
+  md1[1,0] = 2
+  md1[1,1] = 2
+  md1[1,2] = 2
+  
+  
+  md2 = Matrix_Densa.new(3,3)
+  md2[0,0] = 2
+  md2[0,1] = 2
+  md2[0,2] = 2
+  md2[1,0] = 1
+  md2[1,1] = 1
+  md2[1,2] = 1
+  
+  md3 = md1 + md2
+  md4 = md1 - md2
+  md5 = md1 * md2
+  puts md1 == md2
+  md3.to_s
+  puts "/n"
+  md4.to_s
+  puts "/n"
+  md5.to_s
+  

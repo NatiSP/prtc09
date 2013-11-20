@@ -8,12 +8,20 @@
 	    @columnas = columnas
 	  end
 	  
+	  def filas
+	    return @filas
+	  end
+
+	  def columnas	    
+	    return @columnas
+	  end
+	  
 	  def +(other)
 	    
 	    if (other.columnas == self.columnas && other.filas == self.filas)	      
-	      suma = Matrix.new(filas,columnas)	    
-	    for i in 0...@filas
-	      for j in 0...@columnas		
+	      suma = self.class.new(self.filas,self.columnas)	    
+	    for i in 0...self.filas
+	      for j in 0...self.columnas		
 		suma[i,j] = self[i,j] + other[i,j]
 	      end
 	    end
@@ -22,14 +30,14 @@
 	      puts "No se puede sumar, las matrices no tienen las mismas dimensiones!"
 	    end
 	    
-	end
+	  end
   
 	  def -(other)
 	    	    
-	    if (other.columnas == self.columnas && other.filas == self.filas)	      
-	      resta = Matrix.new(filas,columnas)	    
-	    for i in 0..@filas
-	      for j in 0..@columnas		
+	    if ((other.columnas == self.columnas) && (other.filas == self.filas))	      
+	      resta = self.class.new(self.filas,self.columnas)	    
+	    for i in 0..self.filas
+	      for j in 0..self.columnas		
 		resta[i,j] = self[i,j] + other[i,j]
 	      end
 	    end
@@ -42,9 +50,9 @@
 	  
 	  def *(other)
 
-	    mul = Matriz.new(filas, columnas)        
-	      for i in (0..@filas)
-		for j in (0..@columnas)
+	    mul = self.class.new(filas, other.columnas)        
+	      for i in (0..mul.filas)
+		for j in (0..mul.columnas)
 		  mul[i,j] = (self[i,j])*(other[i,j])
 		    for k in (1..@columnas)
 		  mul[i][j] = mul[i][j] + (self[i][k])*(other[k][j])
@@ -55,23 +63,12 @@
 
 	  end
 	  
-	  def ==(other)
-	    for i in (i..@filas)
-	      for j in (j..@columas)
-		if self[i,j] != other[i,j]
-		  return false
-		else
-		  return true
-		end
-	      end
-	    end
-	  end
-	  
 	  def to_s
       
 	    for i in 0...@filas
 	      for j in 0...@columnas
 		puts "#{self[i,j]}"
+		puts " "
 		  if j == @columnas
 		      puts "\n"
 		  end
@@ -80,15 +77,17 @@
 	    
 	  end
           
-	  def filas
-	    return @filas
+	  def ==(other)
+	        
+	    for i in (i..self.filas)
+	      for j in (j..self.columnas)
+		if self[i,j] != other[i,j]
+		  return false
+		end
+	      end
+	    end
+	    	  return true
 	  end
-  
-	  def columnas	    
-	    return @columnas
-	  end
+	  
 
-	  def coerce(other)
-	    [self,other]
-	  end
   end
