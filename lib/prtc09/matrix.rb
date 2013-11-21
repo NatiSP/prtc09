@@ -1,3 +1,5 @@
+module Prtc09
+
   class Matrix
     
     include Enumerable
@@ -36,8 +38,8 @@
 	    	    
 	    if ((other.columnas == self.columnas) && (other.filas == self.filas))	      
 	      resta = self.class.new(self.filas,self.columnas)	    
-	    for i in 0..self.filas
-	      for j in 0..self.columnas		
+	    for i in 0...self.filas
+	      for j in 0...self.columnas		
 		resta[i,j] = self[i,j] + other[i,j]
 	      end
 	    end
@@ -51,8 +53,8 @@
 	  def *(other)
 
 	    mul = self.class.new(filas, other.columnas)        
-	      for i in (0..mul.filas)
-		for j in (0..mul.columnas)
+	      for i in (0...mul.filas)
+		for j in (0...mul.columnas)
 		  mul[i,j] = (self[i,j])*(other[i,j])
 		    for k in (1..@columnas)
 		  mul[i][j] = mul[i][j] + (self[i][k])*(other[k][j])
@@ -65,8 +67,8 @@
 	  
 	  def to_s
       
-	    for i in 0...@filas
-	      for j in 0...@columnas
+	    for i in (0...filas)
+	      for j in (0...columnas)
 		puts "#{self[i,j]}"
 		puts " "
 		  if j == @columnas
@@ -79,8 +81,8 @@
           
 	  def ==(other)
 	        
-	    for i in (i..self.filas)
-	      for j in (j..self.columnas)
+	    for i in (0...self.filas)
+	      for j in (0...self.columnas)
 		if self[i,j] != other[i,j]
 		  return false
 		end
@@ -91,3 +93,5 @@
 	  
 
   end
+
+end

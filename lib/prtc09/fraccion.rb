@@ -1,3 +1,5 @@
+module Prtc09
+
     class Fraccion 
     
       def gcd(u, v)
@@ -92,3 +94,5 @@
     end
     
     end
+    
+end
