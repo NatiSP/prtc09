@@ -91,6 +91,30 @@ module Prtc09
 	    	  return true
 	  end
 	  
+	  def max 
+	    mmax = self[0,0] 
+	    for i in (0...self.filas) 
+	      for j in (0...self.columnas) 
+		if(self[i,j] > mmax) 
+		  mmax = self[i,j] 
+		end
+	      end 
+	    end 
+	    mmax
+	  end
+
+	  def min 
+	    mmin = self[0,0] 
+	    for i in (0...self.filas) 
+	      for j in (0...self.columnas) 
+		if(self[i,j] < mmin) 
+		  mmin = self[i,j] 
+		end 
+	      end 
+	    end 
+	    mmin 
+	  end
+	  
 
   end
 

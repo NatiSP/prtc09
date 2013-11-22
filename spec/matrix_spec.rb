@@ -390,7 +390,7 @@ describe Prtc09::Matrix do
       
       @matrizmul[0,0]=1
       @matrizmul[0,1]=0
-      @matrizmul[1,0]=1
+      @matrizmul[1,0]=0
       @matrizmul[1,1]=0
 
       (@matriz1*@matriz3).should ==(@matrizmul)
@@ -456,10 +456,56 @@ describe Prtc09::Matrix do
      @mprueba = Fraccionarios.new(2,2)
      @mprueba[0,0]= Prtc09::Fraccion.new(65,7)
      @mprueba[0,1]= Prtc09::Fraccion.new(0,1)
-     @mprueba[1,0]= Prtc09::Fraccion.new(-13,7)
+     @mprueba[1,0]= Prtc09::Fraccion.new(3,1)
      @mprueba[1,1]= Prtc09::Fraccion.new(0,1)
      
        (@matriz1*@matriz7).should ==(@mprueba)     
+    end
+    
+    it "Minimo y máximo" do
+      
+     @matriz1[0,0] = 2
+     @matriz1[0,1] = 1
+     @matriz1[1,0] = 1
+     @matriz1[1,1] = 0
+     
+     (@matriz1.min).should ==(@matriz1[1,1])
+     (@matriz1.max).should ==(@matriz1[0,0])
+    end
+    
+    it "Operaciones de la modificacion" do
+     @matriz1[0,0] = 1
+     @matriz1[0,1] = 1
+     @matriz1[1,0] = 1
+     @matriz1[1,1] = 1
+     
+     @matriz7[0,0] = Prtc09::Fraccion.new(1,2)
+     @matriz7[0,1] = Prtc09::Fraccion.new(0,1)
+     @matriz7[1,0] = Prtc09::Fraccion.new(0,1)
+     @matriz7[1,1] = Prtc09::Fraccion.new(0,1)
+     
+     @msuma = Fraccionarios.new(2,2)  
+     @msuma[0,0] = Prtc09::Fraccion.new(3,2)
+     @msuma[0,1] = Prtc09::Fraccion.new(1,1)
+     @msuma[1,0] = Prtc09::Fraccion.new(1,1)
+     @msuma[1,1] = Prtc09::Fraccion.new(1,1)
+     
+     @mresta = Fraccionarios.new(2,2)
+     @mresta[0,0] = Prtc09::Fraccion.new(1,2)
+     @mresta[0,1] = Prtc09::Fraccion.new(1,1)
+     @mresta[1,0] = Prtc09::Fraccion.new(1,1)
+     @mresta[1,1] = Prtc09::Fraccion.new(1,1)
+     
+     @mmul = Fraccionarios.new(2,2)
+     @mmul[0,0] = Prtc09::Fraccion.new(1,2)
+     @mmul[0,1] = Prtc09::Fraccion.new(0,1)
+     @mmul[1,0] = Prtc09::Fraccion.new(0,1)
+     @mmul[1,1] = Prtc09::Fraccion.new(0,1)
+     
+       (@matriz1+@matriz7).should ==(@msuma) 
+       (@matriz1-@matriz7).should ==(@mresta)
+      (@matriz1*@matriz7).should ==(@mmul)
+      
     end
     
 end
