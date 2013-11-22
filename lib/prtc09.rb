@@ -1,7 +1,9 @@
-require "prtc09/fraccion"
-require "prtc09/matrix"
-require "prtc09/matrix_densas"
-require "prtc09/matrix_dispersas"
-
+require "prtc09/fraccion.rb"
+require "prtc09/matrix.rb"
+require "prtc09/matrix_densas.rb"
+require "prtc09/matrix_dispersas.rb"
+  
+  
 module Prtc09
+  
 end

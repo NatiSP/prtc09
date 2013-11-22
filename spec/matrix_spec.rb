@@ -50,12 +50,15 @@ describe Prtc09::Matrix do
   
     it "Deben sumarse dos matrices de enteros" do
     
-    for i in (0..2)
-      for j in (0..2)
-	@matriz1[i,j]=1	
-	@matriz2[i,j]=1
-      end
-    end
+      @matriz1[0,0]=1
+      @matriz1[0,1]=1
+      @matriz1[1,0]=1
+      @matriz1[1,1]=1
+      
+      @matriz2[0,0]=1
+      @matriz2[0,1]=1
+      @matriz2[1,0]=1
+      @matriz2[1,1]=1
     
     @matrizsuma = Enteros.new(2,2)
     
@@ -91,13 +94,16 @@ describe Prtc09::Matrix do
     end
         
     it "Deben restarse dos matrices de enteros" do
-    
-    for i in (0..2)
-      for j in (0..2)
-	@matriz1[i,j]=1	
-	@matriz2[i,j]=1
-      end
-    end
+      
+      @matriz1[0,0]=1
+      @matriz1[0,1]=1
+      @matriz1[1,0]=1
+      @matriz1[1,1]=1
+      
+      @matriz2[0,0]=1
+      @matriz2[0,1]=1
+      @matriz2[1,0]=1
+      @matriz2[1,1]=1
     
     @matrizres = Enteros.new(2,2)
     
@@ -128,18 +134,21 @@ describe Prtc09::Matrix do
       @matrizdresta[1,0]=0
       @matrizdresta[1,1]=0
       
-         (@matriz3-@matriz4).should ==(@matrizdresta)
+         (@matriz3-@matriz4).should eq(@matrizdresta)
 
     end
        
     it "Deben multiplicarse dos matrices de enteros" do
     
-    for i in (0..2)
-      for j in (0..2)
-	@matriz1[i,j]=2	
-	@matriz2[i,j]=2
-      end
-    end
+      @matriz1[0,0]=2
+      @matriz1[0,1]=2
+      @matriz1[1,0]=2
+      @matriz1[1,1]=2
+      
+      @matriz2[0,0]=3
+      @matriz2[0,1]=3
+      @matriz2[1,0]=3
+      @matriz2[1,1]=3
     
     @matrizmul = Enteros.new(2,2)
     
@@ -179,19 +188,24 @@ describe Prtc09::Matrix do
     
     it "Deben sumarse dos matrices de fracciones" do
     
-    for i in (0..2)
-      for j in (0..2)
-	@matriz5[i,j]=Prtc09::Fraccion.new(1,1)	
-	@matriz6[i,j]=Prtc09::Fraccion.new(2,2)
-      end
-    end
+
+      @matriz5[0,0]=Prtc09::Fraccion.new(1,1)
+      @matriz5[0,1]=Prtc09::Fraccion.new(1,1)
+      @matriz5[1,0]=Prtc09::Fraccion.new(1,1)
+      @matriz5[1,1]=Prtc09::Fraccion.new(1,1)
+      
+      @matriz6[0,0]=Prtc09::Fraccion.new(2,2)
+      @matriz6[0,1]=Prtc09::Fraccion.new(2,2)
+      @matriz6[1,0]=Prtc09::Fraccion.new(2,2)
+      @matriz6[1,1]=Prtc09::Fraccion.new(2,2)
+
     
-    @matrizfsuma = Fraccionarios.new(2,2)
+      @matrizfsuma = Fraccionarios.new(2,2)
     
-    @matrizfsuma[0, 0] = Prtc09::Fraccion.new(2,1)
-    @matrizfsuma[0, 1] = Prtc09::Fraccion.new(2,1)
-    @matrizfsuma[1, 0] = Prtc09::Fraccion.new(2,1)
-    @matrizfsuma[1, 1] = Prtc09::Fraccion.new(2,1)
+      @matrizfsuma[0, 0] = Prtc09::Fraccion.new(2,1)
+      @matrizfsuma[0, 1] = Prtc09::Fraccion.new(2,1)
+      @matrizfsuma[1, 0] = Prtc09::Fraccion.new(2,1)
+      @matrizfsuma[1, 1] = Prtc09::Fraccion.new(2,1)
     
         (@matriz5+@matriz6).should ==(@matrizfsuma)
     
@@ -199,19 +213,22 @@ describe Prtc09::Matrix do
     
     it "Deben restarse dos matrices de fracciones" do
     
-    for i in (0..2)
-      for j in (0..2)
-	@matriz5[i,j]=Prtc09::Fraccion.new(2,2)		
-	@matriz6[i,j]=Prtc09::Fraccion.new(1,1)	
-      end
-    end
+      @matriz5[0,0]=Prtc09::Fraccion.new(2,2)
+      @matriz5[0,1]=Prtc09::Fraccion.new(2,2)
+      @matriz5[1,0]=Prtc09::Fraccion.new(2,2)
+      @matriz5[1,1]=Prtc09::Fraccion.new(2,2)
+      
+      @matriz6[0,0]=Prtc09::Fraccion.new(1,1)
+      @matriz6[0,1]=Prtc09::Fraccion.new(1,1)
+      @matriz6[1,0]=Prtc09::Fraccion.new(1,1)
+      @matriz6[1,1]=Prtc09::Fraccion.new(1,1)
     
-    @matrizfres = Fraccionarios.new(2,2)
+      @matrizfres = Fraccionarios.new(2,2)
     
-    @matrizfres[0, 0] = Prtc09::Fraccion.new(0,2)
-    @matrizfres[0, 1] = Prtc09::Fraccion.new(0,2)
-    @matrizfres[1, 0] = Prtc09::Fraccion.new(0,2)
-    @matrizfres[1, 1] = Prtc09::Fraccion.new(0,2)
+      @matrizfres[0, 0] = Prtc09::Fraccion.new(0,2)
+      @matrizfres[0, 1] = Prtc09::Fraccion.new(0,2)
+      @matrizfres[1, 0] = Prtc09::Fraccion.new(0,2)
+      @matrizfres[1, 1] = Prtc09::Fraccion.new(0,2)
     
         (@matriz5-@matriz6).should ==(@matrizfres)
     
@@ -219,19 +236,22 @@ describe Prtc09::Matrix do
     
     it "Deben multiplicarse dos matrices de fracciones" do
     
-    for i in (0..2)
-      for j in (0..2)
-	@matriz5[i,j]=Prtc09::Fraccion.new(2,2)		
-	@matriz6[i,j]=Prtc09::Fraccion.new(1,1)	
-      end
-    end
+      @matriz5[0,0]=Prtc09::Fraccion.new(2,2)
+      @matriz5[0,1]=Prtc09::Fraccion.new(2,2)
+      @matriz5[1,0]=Prtc09::Fraccion.new(2,2)
+      @matriz5[1,1]=Prtc09::Fraccion.new(2,2)
+      
+      @matriz6[0,0]=Prtc09::Fraccion.new(1,1)
+      @matriz6[0,1]=Prtc09::Fraccion.new(1,1)
+      @matriz6[1,0]=Prtc09::Fraccion.new(1,1)
+      @matriz6[1,1]=Prtc09::Fraccion.new(1,1)
     
-    @matrizfmul = Fraccionarios.new(2,2)
+      @matrizfmul = Fraccionarios.new(2,2)
     
-    @matrizfmul[0, 0] = Prtc09::Fraccion.new(2,2)
-    @matrizfmul[0, 1] = Prtc09::Fraccion.new(2,2)
-    @matrizfmul[1, 0] = Prtc09::Fraccion.new(2,2)
-    @matrizfmul[1, 1] = Prtc09::Fraccion.new(2,2)
+      @matrizfmul[0, 0] = Prtc09::Fraccion.new(2,1)
+      @matrizfmul[0, 1] = Prtc09::Fraccion.new(2,1)
+      @matrizfmul[1, 0] = Prtc09::Fraccion.new(2,1)
+      @matrizfmul[1, 1] = Prtc09::Fraccion.new(2,1)
     
         (@matriz5*@matriz6).should ==(@matrizfmul)
     
@@ -310,35 +330,33 @@ describe Prtc09::Matrix do
     
     it "Deben sumarse una matriz densa y una dispersa" do
       
-      for i in(0..2)
-	for j in(0..2)
-	  @matriz1[i,j]=1
-	end
-      end
+          @matriz1[0,0] = 1
+          @matriz1[0,1] = 1
+          @matriz1[1,0] = 1
+          @matriz1[1,1] = 1
       
           @matriz3[0,0] = 1
           @matriz3[0,1] = 0
           @matriz3[1,0] = 0
           @matriz3[1,1] = 0
 
-      @matrizsuma = Enteros.new(2,2)
+	  @matrizsuma = Enteros.new(2,2)
       
-      @matrizsuma[0,0]=2
-      @matrizsuma[0,1]=1
-      @matrizsuma[1,0]=1
-      @matrizsuma[1,1]=1
+	  @matrizsuma[0,0]=2
+	  @matrizsuma[0,1]=1
+	  @matrizsuma[1,0]=1
+	  @matrizsuma[1,1]=1
 
-      (@matriz1+@matriz3).should ==(@matrizsuma)
+	  (@matriz1+@matriz3).should ==(@matrizsuma)
 
     end
     
     it "Deben restarse una matriz densa y una dispersa" do
       
-      for i in(0..2)
-	for j in(0..2)
-	  @matriz1[i,j]=1
-	end
-      end
+          @matriz1[0,0] = 1
+          @matriz1[0,1] = 1
+          @matriz1[1,0] = 1
+          @matriz1[1,1] = 1
       
           @matriz3[0,0] = 1
           @matriz3[0,1] = 0
@@ -358,11 +376,10 @@ describe Prtc09::Matrix do
     
     it "Deben multiplicarse una matriz densa y una dispersa" do
       
-      for i in(0..2)
-	for j in(0..2)
-	  @matriz1[i,j]=1
-	end
-      end
+          @matriz1[0,0] = 1
+          @matriz1[0,1] = 1
+          @matriz1[1,0] = 1
+          @matriz1[1,1] = 1
       
           @matriz3[0,0] = 1
           @matriz3[0,1] = 0
@@ -376,7 +393,7 @@ describe Prtc09::Matrix do
       @matrizmul[1,0]=1
       @matrizmul[1,1]=0
 
-      (@matriz1-@matriz3).should ==(@matrizmul)
+      (@matriz1*@matriz3).should ==(@matrizmul)
 
     end
     
@@ -426,20 +443,20 @@ describe Prtc09::Matrix do
     
     it "Deben multiplicarse una matriz densa de enteros y una dispersa de fracciones" do
     
-     @matriz1[0,0] = 12
+     @matriz1[0,0] = 1
      @matriz1[0,1] = 6
      @matriz1[1,0] = 4
-     @matriz1[1,1] = -9
+     @matriz1[1,1] = -2
     
-     @matriz7[0,0] = Prtc09::Fraccion.new(12,7)
+     @matriz7[0,0] = Prtc09::Fraccion.new(2,7)
      @matriz7[0,1] = Prtc09::Fraccion.new(0,1)
      @matriz7[1,0] = Prtc09::Fraccion.new(3,2)
      @matriz7[1,1] = Prtc09::Fraccion.new(0,1)
 
      @mprueba = Fraccionarios.new(2,2)
-     @mprueba[0,0]= Prtc09::Fraccion.new(12,7)
+     @mprueba[0,0]= Prtc09::Fraccion.new(65,7)
      @mprueba[0,1]= Prtc09::Fraccion.new(0,1)
-     @mprueba[1,0]= Prtc09::Fraccion.new(3,2)
+     @mprueba[1,0]= Prtc09::Fraccion.new(-13,7)
      @mprueba[1,1]= Prtc09::Fraccion.new(0,1)
      
        (@matriz1*@matriz7).should ==(@mprueba)     

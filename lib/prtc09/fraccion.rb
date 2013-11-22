@@ -50,6 +50,9 @@ module Prtc09
     end
     
     def +(other)
+        if !(other.is_a? Fraccion)
+            other = Fraccion.new(other, 1)
+        end
 	if(@d == other.d)
 	  Fraccion.new(@n+other.n,@d)
 	else
@@ -58,15 +61,22 @@ module Prtc09
     end
     
     def -(other)
+        if !(other.is_a? Fraccion)
+            other = Fraccion.new(other, 1)
+        end
 	if(@d == other.d)
-	  Fraccion.new(@n+other.n,@d)
+	  Fraccion.new(@n-other.n,@d)
 	else
 	  Fraccion.new((@n*other.d)-(@d*other.n),(@d*other.d))
 	end
     end
     
       def *(other)
+	if !(other.is_a? Fraccion)
+          Fraccion.new(@n*other, @d)
+        else
 	  Fraccion.new(@n*other.n,@d*other.d)
+	end
       end
     
       def /(other)
