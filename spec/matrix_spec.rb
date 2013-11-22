@@ -422,23 +422,23 @@ describe Prtc09::Matrix do
 
     it "Deben restarse una matriz densa de enteros y una dispersa de fracciones" do
     
-     @matriz1[0,0] = 12
+     @matriz1[0,0] = 1
      @matriz1[0,1] = 6
      @matriz1[1,0] = 4
-     @matriz1[1,1] = -9
+     @matriz1[1,1] = 9
     
-     @matriz7[0,0] = Prtc09::Fraccion.new(12,7)
+     @matriz7[0,0] = Prtc09::Fraccion.new(1,7)
      @matriz7[0,1] = Prtc09::Fraccion.new(0,1)
-     @matriz7[1,0] = Prtc09::Fraccion.new(3,2)
+     @matriz7[1,0] = Prtc09::Fraccion.new(2,1)
      @matriz7[1,1] = Prtc09::Fraccion.new(0,1)
 
      @mprueba = Fraccionarios.new(2,2)
-     @mprueba[0,0]= Prtc09::Fraccion.new(72,7)
+     @mprueba[0,0]= Prtc09::Fraccion.new(6,7)
      @mprueba[0,1]= Prtc09::Fraccion.new(6,1)
-     @mprueba[1,0]= Prtc09::Fraccion.new(5,2)
-     @mprueba[1,1]= Prtc09::Fraccion.new(-9,1)
+     @mprueba[1,0]= Prtc09::Fraccion.new(2,1)
+     @mprueba[1,1]= Prtc09::Fraccion.new(9,1)
      
-       (@matriz1-@matriz7).should ==(@mprueba)     
+       (@matriz1- @matriz7).should ==(@mprueba)     
     end
     
     it "Deben multiplicarse una matriz densa de enteros y una dispersa de fracciones" do

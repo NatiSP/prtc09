@@ -26,7 +26,7 @@ class Matrix_Dispersa < Matrix
   public    
 
     def initialize(filas_dis, columnas_dis)
-      super
+      super(filas_dis, columnas_dis)
       @matrix_d = Hash.new(cero)
     end
     

@@ -100,7 +100,7 @@ module Prtc09
       end
     
     def coerce(other)
-      [self,other]
+        [Fraccion.new(other, 1), self]
     end
     
     end
